@@ -8,9 +8,9 @@ pipeline {
         stage('SCM') {
             steps {
                 echo 'Hello Clone stage'
-               git credentialsId: '25f578bd-d3bc-420c-aea4-1224598a84d5', url: 'https://github.com/mpravallika9713/maven-project-pp.git'                }
+               git credentialsId: '25f578bd-d3bc-420c-aea4-1224598a84d5', url: 'https://github.com/mpravallika9713/maven-project-pp.git'
                }
-}
+        }
         stage('Build') {
             steps {
                 echo 'Hello Build'

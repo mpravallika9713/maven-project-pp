@@ -10,16 +10,16 @@ pipeline {
                 echo 'Hello Clone stage'
                git credentialsId: '25f578bd-d3bc-420c-aea4-1224598a84d5', url: 'https://github.com/mpravallika9713/maven-project-pp.git'
                }
-        }
-        stage('Build') {
-            steps {
-                echo 'Hello Build'
-                sh 'mvn clean install'
-            }
-        }
+}
+stage('Build') {
+    steps {
+        echo 'Hello Build'
+        sh 'mvn clean install'
+  }
+}
         stage('Deploy') {
             steps {
                 echo 'Hello Deploy'
                 deploy adapters: [tomcat9(credentialsId: 'd0e75b51-c186-4390-a4af-0ec4051eb435', path: '', url: 'http://192.168.59.133:8081/')], contextPath: 'devops101.war', war: '**/*war'
-}
+                }
 }
